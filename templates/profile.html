@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Profile</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="profile">
+
+
+<h1>
+👤 {{user.username}}
+</h1>
+
+
+<p>
+{{user.bio}}
+</p>
+
+
+<p>
+
+Followers: {{user.followers}}
+
+&nbsp;
+
+Following: {{user.following}}
+
+</p>
+
+
+
+<hr>
+
+
+
+<div class="grid">
+
+
+{% for post in posts %}
+
+
+<div>
+
+
+<video width="250" controls>
+
+<source src="/static/uploads/{{post.video}}">
+
+</video>
+
+
+<p>
+
+❤️ {{post.likes}}
+
+</p>
+
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>

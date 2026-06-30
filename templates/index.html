@@ -1,0 +1,42 @@
+<a href="/profile/{{current_user.username}}">
+    👤 My Profile
+</a>
+
+<br><br>
+
+
+<div class="container">
+    
+{% for post in posts %}
+
+<div class="post">
+
+    <div class="post-header">
+        👤 {{post.user}}
+    </div>
+
+    <video controls autoplay muted>
+        <source src="/static/uploads/{{post.video}}">
+    </video>
+
+    <audio controls>
+        <source src="/static/songs/{{post.song}}">
+    </audio>
+
+    <div class="actions">
+
+        <a href="/like/{{post.id}}">
+            ❤️ {{post.likes}}
+        </a>
+
+        <form action="/change/{{post.id}}" method="POST">
+            <button>🎵</button>
+        </form>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
